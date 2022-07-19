@@ -1,0 +1,15 @@
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+.lmdItems p{
+  border: solid 1px #ccc;
+  width: 100%;
+  max-width: 200px;
+  border-radius: 8px;
+  padding: 10px;
+}
+.lmdItems p{
+  margin: 0;
+}
