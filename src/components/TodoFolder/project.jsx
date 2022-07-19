@@ -121,6 +121,7 @@ const LmdTimeDate = () => {
   const lmdToday = new Date();
   const curTime =
     lmdDate +
+    "," +
     lmdToday.getDate() +
     lmdToday.getHours() +
     ":" +
