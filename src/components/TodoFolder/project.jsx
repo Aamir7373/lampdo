@@ -1,21 +1,18 @@
 import React, { useState } from "react";
 import Todo from "../Todo";
+import Time from "../Time";
 
 function Project() {
   const [inputData, setInputData] = useState("");
   const [inputItems, setItems] = useState([]);
 
   const addItems = () => {
-    if (!inputData) {
-      return "Add Some items Plz";
-    } else {
-      const lmdInputId = {
-        id: new Date().getTime().toString(),
-        name: inputData,
-      };
-      setItems([...inputItems, lmdInputId]);
-      setInputData("");
-    }
+    const lmdInputId = {
+      id: new Date().getTime().toString(),
+      name: inputData,
+    };
+    setItems([...inputItems, lmdInputId]);
+    setInputData("");
   };
 
   const lmdDeleteItems = (index) => {
@@ -76,7 +73,9 @@ function Project() {
                 </li>
                 <li className="nav-item m-2">
                   <button className="btn btn-danger">
-                    <LmdTimeDate />
+                    <h5 className="m-0">
+                      <Time />
+                    </h5>
                   </button>
                 </li>
               </ul>
@@ -90,7 +89,7 @@ function Project() {
             return (
               <>
                 <div className="row">
-                  <div className="col-md-2">
+                  <div className="col-md-3">
                     <Todo />
                   </div>
                   <div className="col-md-4">
@@ -115,20 +114,4 @@ function Project() {
     </>
   );
 }
-
-const LmdTimeDate = () => {
-  const lmdDate = new Date().toLocaleDateString();
-  const lmdToday = new Date();
-  const curTime =
-    lmdDate +
-    "," +
-    lmdToday.getDate() +
-    lmdToday.getHours() +
-    ":" +
-    lmdToday.getMinutes() +
-    ":" +
-    lmdToday.getSeconds();
-
-  return <>{curTime}</>;
-};
 export default Project;
